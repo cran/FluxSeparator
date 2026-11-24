@@ -1,3 +1,10 @@
+# FluxSeparator 2.0.2
+* Diffusive and ebullitive flux function output is not grouped anymore
+* DIY_sensor_data now has the correct number of rows. Thanks @Noah Ochoa
+
+# FluxSeparator 2.0.1
+* Minor update to citations
+
 # FluxSeparator 2.0.0
 * Included a shiny app `FluxSeparatorApp()`
   * The app helps visualize the process of determining diffusive and ebullitive fluxes

@@ -348,12 +348,13 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 uses a running variance approach to identify sudden concentration
 increases caused by ebullition, then calculates diffusive flux from the
 remaining data using linear regression.</p>
-<p>For methodological details, see <a href="https://doi.org/10.1029/2024JG008035">Sø et al. (2024)</a>.</p>
+<p>For methodological details, see [Sø et
+al. (2024)]<link href="\doi{10.1029/2024JG008035}" rel="canonical">.</p>
 </div>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
 <p>Install the development version from GitHub:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;JonasStage/FluxSeparator&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;FluxSeparator&quot;</span>)</span></code></pre></div>
 </div>
 <div id="loading-example-data" class="section level2">
 <h2>Loading example data</h2>
@@ -392,7 +393,7 @@ event.</p>
 <span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co">#&gt;   ..   station = col_double(),</span></span>
 <span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">#&gt;   ..   sensor = col_double()</span></span>
 <span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">#&gt;   .. )</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt;  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</span></span></code></pre></div>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt;  - attr(*, &quot;problems&quot;)=&lt;pointer: (nil)&gt;</span></span></code></pre></div>
 </div>
 <div id="calculating-ebullitive-flux" class="section level2">
 <h2>Calculating ebullitive flux</h2>
@@ -403,14 +404,13 @@ event.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>ebul_flux <span class="ot">&lt;-</span> <span class="fu">ebullitive_flux</span>(DIY_sensor_data, <span class="at">show_plots =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>ebul_flux</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2 × 10</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; # Groups:   station [1]</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;   station PumpCycle datetime_start      datetime_end       </span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;dttm&gt;              &lt;dttm&gt;             </span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 1       1         1 2021-09-28 03:11:35 2021-09-28 03:51:37</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 2       1         2 2021-09-28 04:11:35 2021-09-28 04:51:36</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; # ℹ 6 more variables: sum_bubbles_concentration &lt;dbl&gt;, n_bubbles &lt;dbl&gt;,</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; #   pumpcycle_duration_hr &lt;dbl&gt;, temp &lt;dbl&gt;, bubbles_per_time &lt;dbl&gt;,</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; #   concentration_per_time &lt;dbl&gt;</span></span></code></pre></div>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;   station PumpCycle datetime_start      datetime_end       </span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;dttm&gt;              &lt;dttm&gt;             </span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; 1       1         1 2021-09-28 03:11:35 2021-09-28 03:51:37</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 2       1         2 2021-09-28 04:11:35 2021-09-28 04:51:36</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; # ℹ 6 more variables: sum_bubbles_concentration &lt;dbl&gt;, n_bubbles &lt;dbl&gt;,</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; #   pumpcycle_duration_hr &lt;dbl&gt;, temp &lt;dbl&gt;, bubbles_per_time &lt;dbl&gt;,</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; #   concentration_per_time &lt;dbl&gt;</span></span></code></pre></div>
 <div id="key-parameters" class="section level3">
 <h3>Key parameters</h3>
 <ul>
@@ -439,12 +439,11 @@ diffusive flux.</p>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; Adding missing grouping variables: `PumpCycle`</span></span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>diff_flux</span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 9</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; # Groups:   PumpCycle, station [1]</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;   PumpCycle station datetime_start      datetime_end       </span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dttm&gt;              &lt;dttm&gt;             </span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; 1         1       1 2021-09-28 03:18:16 2021-09-28 03:31:37</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: slope_concentration_hr &lt;dbl&gt;, slope_standard_error &lt;dbl&gt;,</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; #   n_obs_included_in_lm &lt;int&gt;, r2 &lt;dbl&gt;, temp &lt;dbl&gt;</span></span></code></pre></div>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;   PumpCycle station datetime_start      datetime_end       </span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dttm&gt;              &lt;dttm&gt;             </span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 1         1       1 2021-09-28 03:18:16 2021-09-28 03:31:37</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: slope_concentration_hr &lt;dbl&gt;, slope_standard_error &lt;dbl&gt;,</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; #   n_obs_included_in_lm &lt;int&gt;, r2 &lt;dbl&gt;, temp &lt;dbl&gt;</span></span></code></pre></div>
 <div id="key-parameters-1" class="section level3">
 <h3>Key parameters</h3>
 <ul>
@@ -503,20 +502,19 @@ identified</li>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">citation</span>(<span class="st">&quot;FluxSeparator&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; To cite package &#39;FluxSeparator&#39; in publications use:</span></span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;   Sø J, Sand-Jensen K, Kragh T (2024). &quot;Self-Made Equipment for</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt;   Automatic Methane Diffusion and Ebullition Measurements From Aquatic</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt;   Environments.&quot; _Journal of Geophysical Research: Biogeosciences_.</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;   doi:10.1029/2024JG008035 &lt;https://doi.org/10.1029/2024JG008035&gt;.</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;   Sø J, Sand-Jensen K, Kragh T (2026). _FluxSeparator: Separation of</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt;   Diffusive and Ebullitive Fluxes_.</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt;   doi:10.32614/CRAN.package.FluxSeparator</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;   &lt;https://doi.org/10.32614/CRAN.package.FluxSeparator&gt;.</span></span>
 <span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt;   @Article{,</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt;     title = {Self-Made Equipment for Automatic Methane Diffusion and Ebullition Measurements From Aquatic Environments},</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt;   @Manual{,</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt;     title = {FluxSeparator: Separation of Diffusive and Ebullitive Fluxes},</span></span>
 <span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt;     author = {Jonas Stage Sø and Kaj Sand-Jensen and Theis Kragh},</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt;     journal = {Journal of Geophysical Research: Biogeosciences},</span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt;     year = {2024},</span></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt;     doi = {10.1029/2024JG008035},</span></span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt;   }</span></span></code></pre></div>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt;     year = {2026},</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt;     doi = {10.32614/CRAN.package.FluxSeparator},</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt;   }</span></span></code></pre></div>
 </div>
 
 

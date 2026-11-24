@@ -1,6 +1,6 @@
 Package: FluxSeparator
 Title: Separation of Diffusive and Ebullitive Fluxes
-Version: 2.0.0
+Version: 2.0.2
 Authors@R: c(
     person("Jonas Stage", "Sø", , "Jonassoe@biology.sdu.dk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3222-3706")),
@@ -16,11 +16,10 @@ Description: Separates diffusive and ebullitive (bubble) fluxes from
     on the non-ebullitive portion of the data. See Sø et al. (2024)
     <doi:10.1029/2024JG008035> for details.
 License: MIT + file LICENSE
-URL: https://github.com/JonasStage/FluxSeparator,
-        https://doi.org/10.1029/2024JG008035
+URL: https://cran.r-project.org/package=FluxSeparator
+        https://github.com/JonasStage/FluxSeparator
 BugReports: https://github.com/JonasStage/FluxSeparator/issues
 Encoding: UTF-8
-RoxygenNote: 7.3.3
 Depends: R (>= 4.1.0)
 Imports: broom, dplyr, DT, ggplot2, ggpubr, graphics, HMR, lubridate,
         magrittr, purrr, readr, rlang, shiny, shinydashboard, stats,
@@ -29,12 +28,13 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 LazyData: true
+Config/roxygen2/version: 8.1.1
 NeedsCompilation: no
-Packaged: 2026-06-02 11:14:27 UTC; jonas
+Packaged: 2026-11-24 07:38:43 UTC; jonassoe
 Author: Jonas Stage Sø [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-3222-3706>),
   Kaj Sand-Jensen [ctb] (ORCID: <https://orcid.org/0000-0003-2534-4638>),
   Theis Kragh [ctb] (ORCID: <https://orcid.org/0000-0002-9760-2571>)
 Maintainer: Jonas Stage Sø <Jonassoe@biology.sdu.dk>
 Repository: CRAN
-Date/Publication: 2026-06-02 11:30:02 UTC
+Date/Publication: 2026-11-24 08:20:15 UTC
